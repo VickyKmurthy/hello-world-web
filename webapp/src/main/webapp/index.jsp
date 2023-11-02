@@ -28,6 +28,6 @@
     <button type="submit" class="registerbtn">Register</button>
   </div>
   <div class="container signin">
-    <p>Already have an account? Then Log In <a href="#">Sign in</a>.</p>
+    <p> Already have an account? Then Log-in:<a href="#"> Sign in </a>.</p>
   </div>
 </form>
