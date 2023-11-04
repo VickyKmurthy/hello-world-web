@@ -20,6 +20,10 @@
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
     <br>
 
+    <label for="Location"><b>Enter Location</b></label>
+    <input type="text" placeholder="Enter Location" name="Location" id="Location" required>
+    <br>
+
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
     <hr>
