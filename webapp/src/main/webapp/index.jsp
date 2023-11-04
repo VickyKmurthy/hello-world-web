@@ -1,7 +1,7 @@
 <form action="action_page.php">
   <div class="container">
     <h1>New user Register page</h1>
-    <p>Please fill in this form to create an account.</p>
+    <p>Please fill this form to create an account</p>
     <hr>
      
     <label for="Name"><b>Enter Name</b></label>
@@ -20,7 +20,7 @@
     <input type="text" placeholder="Enter Location" name="Location" id="Location" required>
     <br>
 
-    <label for="psw"><b>Enter PasswordPassword</b></label>
+    <label for="psw"><b>Enter Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
     <br>
 
