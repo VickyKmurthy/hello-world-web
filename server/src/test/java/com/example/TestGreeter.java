@@ -1,33 +1,60 @@
-package com.example;
-
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
 
-public class TestGreeter {
+public class RegistrationFormTest {
+    private WebDriver driver;
 
-  private Greeter greeter;
+    @Before
+    public void setUp() {
+        // Set up WebDriver
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+    }
 
-  @Before
-  public void setup() {
-    greeter = new Greeter();
-  }
+    @Test
+    public void testRegistration() {
+        // Open the web page
+        driver.get("http://13.235.2.90:8080");
 
-  @Test
-  public void greetShouldIncludeTheOneBeingGreeted() {
-    String someone = "World";
+        // Fill in the form fields
+        WebElement nameField = driver.findElement(By.id("Name"));
+        nameField.sendKeys("John Doe");
 
-    assertThat(greeter.greet(someone), containsString(someone));
-  }
+        WebElement mobileField = driver.findElement(By.id("mobile"));
+        mobileField.sendKeys("1234567890");
 
-  @Test
-  public void greetShouldIncludeGreetingPhrase() {
-    String someone = "World";
+        WebElement emailField = driver.findElement(By.id("email"));
+        emailField.sendKeys("test@example.com");
 
-    assertThat(greeter.greet(someone).length(), is(greaterThan(someone.length())));
-  }
+        WebElement locationField = driver.findElement(By.id("Location"));
+        locationField.sendKeys("New York");
+
+        WebElement passwordField = driver.findElement(By.id("psw"));
+        passwordField.sendKeys("password");
+
+        WebElement confirmPasswordField = driver.findElement(By.id("psw-repeat"));
+        confirmPasswordField.sendKeys("password");
+
+        // Submit the form
+        WebElement registerButton = driver.findElement(By.cssSelector(".registerbtn"));
+        registerButton.click();
+
+        // Add assertion to verify the registration is successful (check for success message, redirect, etc.)
+    }
+
+    @After
+    public void tearDown() {
+        // Close the browser
+        driver.quit();
+    }
 }
+
